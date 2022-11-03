@@ -1,0 +1,6 @@
+mutation RemovePerson($byId:String!) {
+  removePerson(byId: $byId) {
+    id
+    name
+  }
+}

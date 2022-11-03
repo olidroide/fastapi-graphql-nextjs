@@ -1,0 +1,34 @@
+type FruitType {
+  id: String!
+  name: String!
+  eatenBy: PersonType
+}
+
+"""Create/Update/Delete operations"""
+type Mutation {
+  addPerson(name: String!): PersonType!
+  removePerson(byId: String!): PersonType!
+  addFruit(name: String!): FruitType!
+}
+
+type PersonType {
+  id: String!
+  name: String!
+  surname: String
+}
+
+"""Read Operations"""
+type Query {
+  """Read all persons."""
+  persons: [PersonType!]!
+
+  """Get a person from ID"""
+  getPerson(id: String!): PersonType!
+
+  """Read all fruits."""
+  fruits: [FruitType!]!
+}
+
+type Subscription {
+  count(target: Int! = 100): Int!
+}

@@ -1,0 +1,7 @@
+query FetchPersonList{
+  persons {
+    id
+    name
+    surname
+  }
+}
